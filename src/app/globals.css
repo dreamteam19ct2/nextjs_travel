@@ -1,5 +1,6 @@
 :root {
   --font-family: 'Roboto', sans-serif;
+  --background-gray:rgba(217, 217, 217, 0.3);
 }
 
 *,
@@ -12,7 +13,7 @@
 }
 body {
   font-family: var(--font-family);
-  min-height: 100vh;
+  height: 100vh;
 }
 html {
   font-size: 62.5%;
