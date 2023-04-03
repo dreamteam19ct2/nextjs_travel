@@ -26,12 +26,24 @@ export default function () {
         <Link className={styles.router} href="/Explore">
           Explore
         </Link>
-        <div style={{ marginLeft: "40%" }}>
+        <Link
+          className={`${styles.router} ${styles.hideroute}`}
+          href="/Explore"
+        >
+          Sign-in
+        </Link>
+        <Link
+          className={`${styles.router} ${styles.hideroute}`}
+          href="/Explore"
+        >
+          Sign-up
+        </Link>
+        <div className={styles.listicon}>
           <InstagramIcon className={styles.icon} />
           <FacebookIcon className={styles.icon} />
           <GoogleIcon className={styles.icon} />
+          <span>Khôi</span>
         </div>
-        <span>Khôi</span>
       </div>
       <div className={styles.line}></div>
     </>
