@@ -1,6 +1,8 @@
 :root {
   --font-family: 'Roboto', sans-serif;
   --background-gray:rgba(217, 217, 217, 0.3);
+  --text-gray:#828282;
+  --text-gray-pale:#E0E0E0
 }
 
 *,
