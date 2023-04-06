@@ -1,5 +1,5 @@
 import './globals.css'
-import Header from '@/components/layout/Header/header'
+// import Header from '@/components/layout/Header/header'
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body style={{ overflowX: "hidden" }}>
-        <Header />
+        {/* <Header /> */}
         {children}
       </body>
     </html>

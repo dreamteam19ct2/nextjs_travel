@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Header from "@/components/layout/Header/header";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import Grid from "@mui/material/Grid";
@@ -12,6 +13,8 @@ const inter = Inter({ subsets: ["latin"] });
 export default function Home() {
   return (
     <main>
+      <Header />
+
       <div className={styles.intro}>
         <div className={styles.line}></div>
         <Grid container spacing={0}>
