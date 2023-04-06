@@ -1,0 +1,32 @@
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.nameLogo {
+    margin-left: 12px;
+}
+
+.header__router {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    justify-content: space-between;
+}
+
+.router {
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.selectRoute {
+    color: var(--color-main);
+    cursor: pointer;
+}
