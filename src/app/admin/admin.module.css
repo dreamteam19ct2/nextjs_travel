@@ -1,3 +1,13 @@
 .body {
     color: var(--text-main);
 }
+
+.header__button {
+    width: 174px;
+    height: 48px;
+    border-radius: 20px;
+    background-color: white;
+    color: var(--color-main);
+    border: none;
+    font-size: 18px;
+}
