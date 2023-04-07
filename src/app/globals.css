@@ -14,14 +14,14 @@
 *::after {
   box-sizing: border-box;
   margin: 0;
-  /* position: relative; */
+  position: relative;
   font-weight: 700;
   font-size: 24px;
 }
 body {
   margin: 40px 100px;
   font-family: var(--font-family);
-  height: 100%;
+  height: 100vh;
   background-color: var(--background-main);
 }
 html {
