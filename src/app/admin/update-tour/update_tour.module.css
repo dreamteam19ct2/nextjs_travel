@@ -1,0 +1,53 @@
+.table {
+    margin-top: 26px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.content {
+    padding: 88px 128px;
+}
+
+.fill_line {
+    display: flex;
+    align-items: baseline;
+}
+
+.fill_line_left {
+    width: 30%;
+}
+
+.fill_line_right {
+    width: 70%;
+    height: 1px;
+    border: solid .4px black;
+}
+
+.frame_schedule {
+    display: flex;
+    margin-top: 55px;
+}
+
+.schedule_day {
+    width: 20%;
+    text-align: center;
+    border: solid 1px;
+}
+
+.description {
+    width: 80%;
+    text-align: center;
+    border: solid 1px;
+}
+
+.frame_img {
+    display: flex;
+}
+
+.frame_img {
+    margin-top: 78px;
+}
+
+.img_choose {
+    margin-left: 40px;
+}

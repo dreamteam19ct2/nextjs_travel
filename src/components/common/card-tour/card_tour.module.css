@@ -1,0 +1,73 @@
+.container {
+    margin-top: 32px;
+    background-color: white;
+    border-radius: 20px;
+    width: 100%;
+    height: 194px;
+}
+
+.body {
+    padding: 16px 20px;
+    display: flex;
+}
+
+.body img {
+    width: 270px;
+    height: 160px;
+    border-radius: 20px;
+}
+
+.content {
+    padding: 12px 20px;
+}
+
+.content_top {
+    display: flex;
+}
+
+.content_name_tour {
+    font-size: 32px;
+}
+
+.count_star {
+    margin-left: 22px;
+}
+
+.star_icon {
+    color: var(--color-main);
+}
+
+.content_mid {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.content_bot {
+    margin-top: 10px;
+    display: flex;
+}
+
+.date {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.number_people {
+    margin-left: 50px;
+}
+
+.people {
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 16px;
+}
+
+.arrow_icon {
+    position: absolute;
+    top: 50px;
+    right: 40px;
+    width: 96px;
+    height: 96px;
+    color: var(--color-main);
+}
