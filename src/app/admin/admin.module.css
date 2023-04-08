@@ -1,8 +1,18 @@
 .body {
     color: var(--text-main);
+    padding-bottom: 77px;
+}
+
+.margin_right10 {
+    margin-right: 10px;
+}
+
+.margin_right30 {
+    margin-right: 30px;
 }
 
 .header__button {
+    margin-top: 14px;
     width: 174px;
     height: 48px;
     border-radius: 20px;
@@ -10,4 +20,41 @@
     color: var(--color-main);
     border: none;
     font-size: 18px;
+}
+
+.select_tour {
+    display: flex;
+    margin-top: 76px;
+}
+
+.select_type {
+    line-height: 30px;
+    width: 150px;
+}
+
+.select_type select {
+    border: none;
+    border-radius: 5px;
+    padding: 2px;
+    color: var(--text-gray);
+}
+
+.select_type select,
+.select_type select option {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.popular_tour,
+.family_tour,
+.new_tour {
+    margin-top: 115px;
+}
+
+.popular_tour_title,
+.family_tour_title,
+.new_tour_title {
+    font-size: 32px;
+    color: var(--color-main);
+    text-align: center;
 }
