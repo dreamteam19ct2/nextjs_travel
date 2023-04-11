@@ -21,6 +21,9 @@
   border: none;
   font-size: 18px;
 }
+.header__button:hover{
+  cursor: pointer;
+}
 
 .select_tour {
   display: flex;

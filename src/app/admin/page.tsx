@@ -4,6 +4,7 @@ import HeaderAdmin from "@/components/layout/HeaderAdmin/header_admin";
 import CardTour from "@/components/common/card-tour/card_tour";
 import styles from "./admin.module.css";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 export default function Admin() {
     const [tourList, setTourList] = useState([]);
     useEffect(() => {
@@ -22,7 +23,9 @@ export default function Admin() {
         <HeaderAdmin></HeaderAdmin>
         <div className={styles.body}>
           <div className={styles.btn_add_tour}>
-            <button className={styles.header__button}>Add Tour</button>
+            <Link href="/admin/create-tour">
+              <button className={styles.header__button}>Add Tour</button>
+            </Link>
           </div>
           <div className={styles.select_tour}>
             <div className={styles.margin_right10}>Type Tour</div>
