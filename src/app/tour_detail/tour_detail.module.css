@@ -1,0 +1,107 @@
+.Header_tour_detail{
+            text-align: center;
+            color: var(--color-main);
+            
+
+}
+.container__header__nameTourDetail{
+    display: flex;
+    align-items: center
+}
+.container__header__nameTourDetail__Name{
+    width: 100% ;
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center  ;
+    line-height: 77px;
+    letter-spacing: -0.231818px;
+    color: #F97300;
+   
+}
+.container__header__nameTourDetail__img{
+    width: 100%;
+    height: 361px;
+    margin-top: 3%;
+}
+.container__header__nameTourDetail__img img{
+    width: 100%;
+    height: 361px;
+}
+.container__header__nameTourDetail__content{
+    line-height: 19px;
+    letter-spacing: -0.231818px;
+    color: #858585;
+    margin-top: 1%;
+}
+.container__header__nameTourDetail__Evaluate{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.container__header__nameTourDetail__Evaluate__icon{
+    margin-left: 3%;
+}
+.container__header__nameTourDetail__Evaluate__icon__icon{
+    color:#F97300;
+}
+.container__header__nameTourDetail__Schedule {
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.container__header__nameTourDetail__Schedule__p{
+    margin-left: 1%;
+}
+.container__header__nameTourDetail__people{
+    display: flex;
+    align-items: center;
+    margin-top: 1%;
+}
+.container__header__nameTourDetail__people__quantity{
+    margin-left: 1%;
+}
+.container__header__nameTourDetail__detail{
+    margin-top: 1%;
+    width: 100%;
+}
+.container__header__nameTourDetail__detail__day{
+    display: flex;
+    
+}
+.container__header__nameTourDetail__detail__day__text{
+    margin-bottom: 1%;
+    text-align: center;
+    background-color: white;  
+    width: 144px !important;
+    height: 43px;
+    color: black;  
+    border-radius: 10px;
+    border: 1px solid #0000;
+    padding: 3px;
+    margin-right: 1.5%;
+}
+.container__header__nameTourDetail__detail__day__text__contain{
+    font-weight: 400
+}
+.container__header__nameTourDetail__detail_price{
+    margin-top: 3%;
+    display: flex;
+    align-items: center;
+}
+.container__header__nameTourDetail__detail_price_money{
+    margin-left: 3%;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+.container__header__nameTourDetail__detail_price_button{
+    background: #10828C;
+    border-radius: 10px;
+    width: 256px;
+    height: 70px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    color: #FFFFFF;
+}
