@@ -45,18 +45,18 @@ export default function Admin() {
   };
 
   const handleSubmit = (event: any) => {
-    event.preventDefault();
-
-    setTourName("");
-    setImg("");
-    setDescription("");
-    setDateStart("");
-    setDateEnd("");
-    setPrice("");
-    setMaxPeople("");
-    setDetail("");
-    setTypeTour("");
-    setLocation("");
+    // event.preventDefault();
+    createTour;
+    // setTourName("");
+    // setImg("");
+    // setDescription("");
+    // setDateStart("");
+    // setDateEnd("");
+    // setPrice("");
+    // setMaxPeople("");
+    // setDetail("");
+    // setTypeTour("");
+    // setLocation("");
   };
   
   return (
@@ -142,10 +142,6 @@ export default function Admin() {
                 </div>
               </div>
             </div>
-            {/* <div className={styles.frame_schedule}>
-                        <div className={styles.schedule_day}>Day</div>
-                        <div className={styles.description}>Description</div>
-                    </div> */}
             <div className={styles.frame_table}>
               <table>
                 <tr className={styles.frame_schedule}>
