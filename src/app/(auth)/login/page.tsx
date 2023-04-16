@@ -2,6 +2,8 @@
 import styles from "./login.module.css";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import Link from "next/link";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function () {
@@ -22,7 +24,8 @@ export default function () {
 
       // Lấy thông tin token từ response và lưu vào trình duyệt của người dùng
       const token = response.data.token;
-      localStorage.setItem("token", token);
+      // localStorage.setItem("token", token);
+      Cookies.set("token", token);
       setMessage(response.data.message);
       setEmail("");
       setPassword("");
@@ -64,14 +67,18 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <button type="submit" className={styles.btn}>
-              SIGN IN
-              <ArrowForwardIosIcon className={styles.icon} />
-            </button>
+            <Link href="/">
+              <button type="submit" className={styles.btn}>
+                LOGIN
+                <ArrowForwardIosIcon className={styles.icon} />
+              </button>
+            </Link>
           </form>
           <span className={styles.Exception}>
             I don’t have an account ?
-            <span className={styles.Exception__link}> Sign up</span>
+            <Link href="/register">
+              <span className={styles.Exception__link}> Sign up</span>
+            </Link>
           </span>
           <img className={styles.img} src="./tree.png" alt="img" />
         </div>
