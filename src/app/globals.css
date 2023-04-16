@@ -29,3 +29,6 @@ html {
   /* font-weight: 700; */
   line-height: 1.6rem; 
 }
+a{
+  text-decoration: none;
+}
