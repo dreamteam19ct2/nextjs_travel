@@ -10,7 +10,7 @@ export default function Admin() {
     useEffect(() => {
       async function fetchTourData() {
         const response = await fetch(
-          "http://127.0.0.1:8000/api/login/get_tour"
+          "https://dreamteamtravel.000webhostapp.com/api/get_tour"
         );
         const data = await response.json();
         setTourList(data);

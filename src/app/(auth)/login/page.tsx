@@ -4,32 +4,49 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
-
+import {
+  saveTokenToLocalStorage,
+  getTokenFromLocalStorage,
+} from "@/storage/localStorage";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function () {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
+  function decodeToken(token: string) {
+    const base64Url = token.split(".")[1];
+    const base64 = base64Url.replace("-", "+").replace("_", "/");
+    return JSON.parse(atob(base64));
+  }
   useEffect(() => {
     setMessage("");
   }, []);
   async function handleSubmit(event: any) {
     event.preventDefault();
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login", {
-        email,
-        password,
-      });
+      const response = await axios.post(
+        "https://dreamteamtravel.000webhostapp.com/api/login",
+        {
+          email,
+          password,
+        }
+      );
 
       // Lấy thông tin token từ response và lưu vào trình duyệt của người dùng
       const token = response.data.token;
-      // localStorage.setItem("token", token);
-      Cookies.set("token", token);
+      saveTokenToLocalStorage(token);
       setMessage(response.data.message);
       setEmail("");
       setPassword("");
 
+      const tokenFromLocalStorage = getTokenFromLocalStorage();
+      if (tokenFromLocalStorage) {
+        const decodedToken = decodeToken(tokenFromLocalStorage);
+        console.log("Decoded Token:", decodedToken);
+      } else {
+        console.log("Token not found in Local Storage");
+      }
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
     } catch (error) {
       setMessage("Đăng nhập thất bại!");
@@ -67,12 +84,12 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <Link href="/">
-              <button type="submit" className={styles.btn}>
-                LOGIN
-                <ArrowForwardIosIcon className={styles.icon} />
-              </button>
-            </Link>
+            {/* <Link href="/"> */}
+            <button type="submit" className={styles.btn}>
+              LOGIN
+              <ArrowForwardIosIcon className={styles.icon} />
+            </button>
+            {/* </Link> */}
           </form>
           <span className={styles.Exception}>
             I don’t have an account ?
