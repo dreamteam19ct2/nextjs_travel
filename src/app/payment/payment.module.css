@@ -4,11 +4,11 @@
     
 
 }
-.container__header__nameTourDetail{
+.container__header__namePayment{
     display: flex;
     align-items: center
 }
-.container__header__nameTourDetail__Name{
+.container__header__namePayment__Name{
     width: 100% ;
     font-weight: 700;
     font-size: 64px;
@@ -18,7 +18,7 @@
     color: #F97300;
 
 }
-.container__header__nameTourDetail__content{
+.container__header__namePayment__content{
     width: 1061px;
     height: 553px;
     background: #FFFFFF;
@@ -26,7 +26,7 @@
     margin: auto;
     margin-top: 2%;
 }
-.container__header__nameTourDetail__content__name__view{
+.container__header__namePayment__content__name__view{
     width: 223px;
     height: 40px;
     background: #FFFFFF;
@@ -35,30 +35,30 @@
     margin-left: 2%;
     
 }
-.container__header__nameTourDetail__content{
+.container__header__namePayment__content{
     padding-top: 5%;
     padding-left: 5%;
     padding-right: 5%;
 }
-.container__header__nameTourDetail__content_item{
+.container__header__namePayment__content_item{
     display: flex;
     margin-top: 3%;
 }
-.container__header__nameTourDetail__content__name__firstname{
+.container__header__namePayment__content__name__firstname{
     display: flex;
     align-items: center;
     width: 50%;
 }
-.container__header__nameTourDetail__content__name__lastname{
+.container__header__namePayment__content__name__lastname{
     display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 50%;
 }
-.container__header__nameTourDetail__content__p{
+.container__header__namePayment__content__p{
     width: 30%;
 }
-.container__header__nameTourDetail__content__view{
+.container__header__namePayment__content__view{
     width: 70%;
     height: 40px;
     background: #FFFFFF;
@@ -66,24 +66,24 @@
     border-radius: 5px;
     margin-left: 2%;
 }
-.container__header__nameTourDetail__detail_price{
+.container__header__namePayment__detail_price{
     margin: 3% 7% 0% 7%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 5% !important;
 }
-.container__header__nameTourDetail__detail_price__nomal{
+.container__header__namePayment__detail_price__nomal{
     display: flex;
     width: 45%;
     justify-content: space-between;
     align-items: center;
 }
-.container__header__nameTourDetail__detail_price_money{
+.container__header__namePayment__detail_price_money{
     margin-left: 3%;
     
 }
-.container__header__nameTourDetail__detail_price__nomal_p{
+.container__header__namePayment__detail_price__nomal_p{
     font-weight: 700;
     font-size: 40px;
     color: #F97300;
@@ -91,7 +91,7 @@
 }
 
 
-.container__header__nameTourDetail__detail_price_button{
+.container__header__namePayment__detail_price_button{
     background: #10828C;
     border-radius: 10px;
     width: 256px;
