@@ -1,6 +1,5 @@
 "use client";
 import { useState, useEffect } from "react";
-
 import HeaderAdmin from "@/components/layout/HeaderAdmin/header_admin";
 import styles from "./create_tour.module.css";
 import axios from "axios";

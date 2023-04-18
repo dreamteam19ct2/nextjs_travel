@@ -1,0 +1,101 @@
+.body{
+    font-family: 'Roboto';
+    line-height: 1.6;
+    color: #4f4f4f;
+}
+.container__header__checkTour__Name{
+    width: 100% ;
+    font-weight: 700;
+    font-size: 64px;
+    text-align: center  ;
+    line-height: 77px;
+    letter-spacing: -0.231818px;
+    color: #F97300;
+   
+}
+.check_tour__contain{
+    padding: 4%;
+    
+}
+.container__header__checkTour__Name_inf_main{
+    width: 450px;
+    height: 350px;
+    margin-top: 4%;
+   
+}
+.container__header__checkTour__Name_inf{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   width: 35%;
+   background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+   flex: 0 0 auto;
+   border-radius: 30px 0px 0px 30px;
+}
+.container__header__checkTour__Name_inf__p{
+    border: 2px solid #ff0000;
+    padding: 8px 12px;
+}
+
+.container__header__checkTour__Name_inf__foot{
+    background-color: #ffffff;
+    width: 65%;
+    border-radius: 0px 30px 30px 0px;
+}
+.container__header__checkTour__Name__inf__left__p_lr{
+    display: flex;
+    justify-content: space-around
+}
+.container__header__checkTour__Name__inf__left{
+    width: 100%;
+    padding: 8px 12px;
+    
+}
+
+.container__header__checkTour__Name__inf__left__p {
+    font-weight: 500;
+    line-height: 1.2 ;
+    text-align: center;
+    border-bottom: 1px solid #d2d0d0;
+}
+.container__header__checkTour__Name__inf__left__p_lr{
+    margin: 3%;
+}
+.container__header__checkTour__Name__inf__left__p__p {
+    font-weight: 500;
+    line-height: 1.2 ;
+}
+.container__header__checkTour__Name__inf__left__p__label{
+    font-weight: 200;
+    line-height: 1.2 ;
+    font-size: 21px;
+    margin-left: 20%;
+}
+.container__header__checkTour__Name__inf__about__p{
+    font-weight: 200;
+    line-height: 1.2 ;
+    font-size: 17px;
+    height: 100px;
+    margin: 5%;
+}
+.container__header__checkTour__Name__inf__about__label{
+            color:#F97300;
+            font-weight: 500;
+            width: 100%;
+            line-height: 1.2 ;
+           text-align: center;
+}
+.container__header__checkTour__Name__inf__about__main{
+    width: 100%;
+    text-align: center;
+}
+.container__header__checkTour__Name__inf__about__btn{
+    border: none;
+    align-items: center;
+    padding: 8px 12px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3%;
+    background: linear-gradient(to right bottom, rgba(246, 211, 101, 1), rgba(253, 160, 133, 1));
+}
