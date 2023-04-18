@@ -14,44 +14,45 @@ export default function () {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  function decodeToken(token: string) {
-    const base64Url = token.split(".")[1];
-    const base64 = base64Url.replace("-", "+").replace("_", "/");
-    return JSON.parse(atob(base64));
-  }
   useEffect(() => {
     setMessage("");
   }, []);
   async function handleSubmit(event: any) {
     event.preventDefault();
     try {
-      const response = await axios.post(
-        "https://dreamteamtravel.000webhostapp.com/api/login",
-        {
-          email,
-          password,
-        }
-      );
+      const response = await axios.post("http://127.0.0.1:8000/api/login", {
+        email,
+        password,
+      });
 
       // Lấy thông tin token từ response và lưu vào trình duyệt của người dùng
       const token = response.data.token;
       saveTokenToLocalStorage(token);
+
+      // lưu du lieu vao storages
+      const id = response.data.user.id;
+      const e_mail = response.data.user.email;
+      const system_role = response.data.user.system_role;
+      localStorage.setItem("id", id);
+      localStorage.setItem("email", e_mail);
+      localStorage.setItem("system_role", system_role);
+
       setMessage(response.data.message);
       setEmail("");
       setPassword("");
 
-      const tokenFromLocalStorage = getTokenFromLocalStorage();
-      if (tokenFromLocalStorage) {
-        const decodedToken = decodeToken(tokenFromLocalStorage);
-        console.log("Decoded Token:", decodedToken);
-      } else {
-        console.log("Token not found in Local Storage");
-      }
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
     } catch (error) {
       setMessage("Đăng nhập thất bại!");
       console.error(error);
     }
+  }
+  const role_local = localStorage.getItem("system_role");
+  let link_role = "/";
+  if (role_local == "1") {
+    link_role = "/";
+  } else if (role_local == "2") {
+    link_role = "/admin";
   }
 
   return (
@@ -84,12 +85,12 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            {/* <Link href="/"> */}
-            <button type="submit" className={styles.btn}>
-              LOGIN
-              <ArrowForwardIosIcon className={styles.icon} />
-            </button>
-            {/* </Link> */}
+            <Link href={`${link_role}`}>
+              <button type="submit" className={styles.btn}>
+                LOGIN
+                <ArrowForwardIosIcon className={styles.icon} />
+              </button>
+            </Link>
           </form>
           <span className={styles.Exception}>
             I don’t have an account ?

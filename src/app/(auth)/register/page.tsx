@@ -7,8 +7,14 @@ import Link from "next/link";
 
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function () {
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [formStatus, setFormStatus] = useState<
+    "idle" | "submitting" | "submitted"
+  >("idle");
+
   const [message, setMessage] = useState("");
 
   useEffect(() => {
@@ -16,27 +22,35 @@ export default function () {
   }, []);
   async function handleSubmit(event: any) {
     event.preventDefault();
+     setFormStatus("submitting");
     try {
-      const response = await axios.post("http://127.0.0.1:8000/api/login", {
-        email,
-        password,
+      const response = await axios.post("http://127.0.0.1:8000/api/register", {
+        username: username,
+        email: email,
+        password: password,
+        c_password: confirmPassword,
       });
 
-      // Lấy thông tin token từ response và lưu vào trình duyệt của người dùng
-      const token = response.data.token;
-      // localStorage.setItem("token", token);
-      Cookies.set("token", token);
       setMessage(response.data.message);
-      setEmail("");
-      setPassword("");
+    setFormStatus("submitted");
 
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
     } catch (error) {
       setMessage("Đăng nhập thất bại!");
       console.error(error);
+          setFormStatus("idle");
+
     }
   }
-
+  let link_resgister = "/";
+  if (formStatus === "submitted" && message === "register success") {
+    link_resgister = "/login";
+    alert("dung");
+  }
+  // else {
+  //   // link_resgister = "/register";
+  //   alert("sai");
+  // }
   return (
     <>
       <div className={styles.container}>
@@ -50,8 +64,8 @@ export default function () {
                 id="Username"
                 className={styles.form__input__text}
                 placeholder="Enter your Username"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
+                value={username}
+                onChange={(event) => setUsername(event.target.value)}
               />
             </div>
             <div className={styles.form__input}>
@@ -72,8 +86,8 @@ export default function () {
                 id="Confirm Password"
                 className={styles.form__input__text}
                 placeholder="Enter Confirm Password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
+                value={confirmPassword}
+                onChange={(event) => setConfirmPassword(event.target.value)}
               />
             </div>
             <div className={styles.form__input}>
@@ -88,11 +102,11 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <Link href="/">
-              <button type="submit" className={styles.btn}>
-                SIGN UP
-                <ArrowForwardIosIcon className={styles.icon} />
-              </button>
+            <Link href={`${link_resgister}`}>
+            <button type="submit" className={styles.btn}>
+              SIGN UP
+              <ArrowForwardIosIcon className={styles.icon} />
+            </button>
             </Link>
           </form>
           <span className={styles.Exception}>

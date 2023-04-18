@@ -3,18 +3,48 @@ import { useState, useEffect } from "react";
 
 import HeaderAdmin from "@/components/layout/HeaderAdmin/header_admin";
 import styles from "./create_tour.module.css";
+import axios from "axios";
 
 export default function Admin() {
-  const [tourName, setTourName] = useState("");
-  const [img, setImg] = useState("");
-  const [description, setDescription] = useState("");
-  const [dateStart, setDateStart] = useState("");
-  const [dateEnd, setDateEnd] = useState("");
-  const [maxPeople, setMaxPeople] = useState("");
-  const [price, setPrice] = useState("");
-  const [detail, setDetail] = useState("");
-  const [typeTour, setTypeTour] = useState("");
-  const [location, setLocation] = useState("");
+  const [tourName, setTourName] = useState("1");
+  const [img, setImg] = useState("1");
+  const [description, setDescription] = useState("1");
+  const [dateStart, setDateStart] = useState("1");
+  const [dateEnd, setDateEnd] = useState("1");
+  const [maxPeople, setMaxPeople] = useState("1");
+  const [price, setPrice] = useState("1");
+  const [detail, setDetail] = useState("1");
+  const [typeTour, setTypeTour] = useState("1");
+  const [location, setLocation] = useState("1");
+
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(event: any) {
+    event.preventDefault();
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/api/create_tour",
+        {
+          tour_name: tourName,
+          img: "https://linhhungtourist.com.vn/wp-content/uploads/2019/03/1551111810-291-2-1551079327-width650height433.jpg",
+          description: description,
+          date_start: dateStart,
+          date_end: dateEnd,
+          max_people: maxPeople,
+          price: price,
+          detail: detail,
+          type_tour: typeTour,
+          location: location,
+        }
+      );
+      setMessage(response.data.message);
+      alert("ok");
+      // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
+    } catch (error) {
+      alert("khong connnect dược server!");
+      console.error(error);
+    }
+  }
 
   const createTour = async () => {
     const url = "http://127.0.0.1:8000/api/create_tour";
@@ -30,40 +60,41 @@ export default function Admin() {
       type_tour: typeTour,
       location: location,
     };
-    const options = {
-      method: "POST",
-      body: JSON.stringify(data),
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    // const options = {
+    //   method: "POST",
+    //   body: JSON.stringify(data),
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
 
-    const response = await fetch(url, options);
-    const result = await response.json();
+    // const response = await fetch(url, options);
+    // const result = await response.json();
 
-    console.log(result);
+    // console.log(result);
   };
 
-  const handleSubmit = (event: any) => {
-    // event.preventDefault();
-    createTour;
-    // setTourName("");
-    // setImg("");
-    // setDescription("");
-    // setDateStart("");
-    // setDateEnd("");
-    // setPrice("");
-    // setMaxPeople("");
-    // setDetail("");
-    // setTypeTour("");
-    // setLocation("");
-  };
-  
+  // const handleSubmit = (event: any) => {
+  //   // event.preventDefault();
+  //   createTour;
+  //   // setTourName("");
+  //   // setImg("");
+  //   // setDescription("");
+  //   // setDateStart("");
+  //   // setDateEnd("");
+  //   // setPrice("");
+  //   // setMaxPeople("");
+  //   // setDetail("");
+  //   // setTypeTour("");
+  //   // setLocation("");
+  // };
+
   return (
     <>
       <HeaderAdmin></HeaderAdmin>
       <div className={styles.table}>
         <form onSubmit={handleSubmit}>
+          {message && <p className={styles.messErr}>{message}</p>}
           <div className={styles.content}>
             <div className={styles.fill}>
               <div className={styles.fill_line}>

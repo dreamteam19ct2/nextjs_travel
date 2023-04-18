@@ -57,7 +57,9 @@ export default function () {
             Contacts
           </div>
         </div>
-        <button className={styles.header__button}>Book Ticket</button>
+        <Link href="/login">
+          <button className={styles.header__button}>Book Ticket</button>
+        </Link>
       </div>
     </>
   );
