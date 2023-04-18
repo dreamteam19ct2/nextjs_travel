@@ -36,7 +36,6 @@ export default function () {
       console.error(error);
     }
   }
-
   return (
     <>
       <div className={styles.container}>
