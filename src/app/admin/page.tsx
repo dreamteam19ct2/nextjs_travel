@@ -9,9 +9,7 @@ export default function Admin() {
     const [tourList, setTourList] = useState([]);
     useEffect(() => {
       async function fetchTourData() {
-        const response = await fetch(
-          "http://127.0.0.1:8000/api/login/get_tour"
-        );
+        const response = await fetch("http://127.0.0.1:8000/api/get_tour");
         const data = await response.json();
         setTourList(data);
       }

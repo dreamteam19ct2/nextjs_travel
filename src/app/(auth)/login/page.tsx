@@ -4,7 +4,10 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
-
+import {
+  saveTokenToLocalStorage,
+  getTokenFromLocalStorage,
+} from "@/storage/localStorage";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 export default function () {
   const [email, setEmail] = useState("");
@@ -24,8 +27,16 @@ export default function () {
 
       // Lấy thông tin token từ response và lưu vào trình duyệt của người dùng
       const token = response.data.token;
-      // localStorage.setItem("token", token);
-      Cookies.set("token", token);
+      saveTokenToLocalStorage(token);
+
+      // lưu du lieu vao storages
+      const id = response.data.user.id;
+      const e_mail = response.data.user.email;
+      const system_role = response.data.user.system_role;
+      localStorage.setItem("id", id);
+      localStorage.setItem("email", e_mail);
+      localStorage.setItem("system_role", system_role);
+
       setMessage(response.data.message);
       setEmail("");
       setPassword("");
@@ -36,6 +47,14 @@ export default function () {
       console.error(error);
     }
   }
+  const role_local = localStorage.getItem("system_role");
+  let link_role = "/";
+  if (role_local == "1") {
+    link_role = "/";
+  } else if (role_local == "2") {
+    link_role = "/admin";
+  }
+
   return (
     <>
       <div className={styles.container}>
@@ -66,7 +85,7 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <Link href="/">
+            <Link href={`${link_role}`}>
               <button type="submit" className={styles.btn}>
                 LOGIN
                 <ArrowForwardIosIcon className={styles.icon} />
