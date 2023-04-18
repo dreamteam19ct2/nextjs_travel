@@ -1,6 +1,6 @@
 .container {
   width: 60%;
-  height: 100vh;
+  height: 90vh;
   background-color: white;
   position: absolute;
   top: 0;
@@ -80,8 +80,13 @@
 }
 .img{
     position: absolute;
-    width: 60%;
-    left: 60%;
+    width: 150%;
+    left: 90%;
     top: 0;
     z-index: 0;
+}
+.messErr{
+  font-size: 16px;
+  font-weight: 500;
+  color: red;
 }
