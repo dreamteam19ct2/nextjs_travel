@@ -11,9 +11,6 @@ export default function () {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [formStatus, setFormStatus] = useState<
-    "idle" | "submitting" | "submitted"
-  >("idle");
 
   const [message, setMessage] = useState("");
 
@@ -22,7 +19,6 @@ export default function () {
   }, []);
   async function handleSubmit(event: any) {
     event.preventDefault();
-     setFormStatus("submitting");
     try {
       const response = await axios.post("http://127.0.0.1:8000/api/register", {
         username: username,
@@ -32,25 +28,23 @@ export default function () {
       });
 
       setMessage(response.data.message);
-    setFormStatus("submitted");
 
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
+      const mess = response.data.message;
+      if (mess == "register success") {
+        window.location.href = "/login";
+      } else {
+        setUsername("");
+        setEmail("");
+        setPassword("");
+        setConfirmPassword("");
+      }
     } catch (error) {
-      setMessage("Đăng nhập thất bại!");
+      alert("khong ket noi duoc ");
       console.error(error);
-          setFormStatus("idle");
-
     }
   }
-  let link_resgister = "/";
-  if (formStatus === "submitted" && message === "register success") {
-    link_resgister = "/login";
-    alert("dung");
-  }
-  // else {
-  //   // link_resgister = "/register";
-  //   alert("sai");
-  // }
+
   return (
     <>
       <div className={styles.container}>
@@ -102,12 +96,12 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <Link href={`${link_resgister}`}>
+            {/* <Link href={`${link_resgister}`}> */}
             <button type="submit" className={styles.btn}>
               SIGN UP
               <ArrowForwardIosIcon className={styles.icon} />
             </button>
-            </Link>
+            {/* </Link> */}
           </form>
           <span className={styles.Exception}>
             I don’t have an account ?
