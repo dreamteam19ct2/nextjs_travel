@@ -4,6 +4,7 @@ import axios from "axios";
 import React, { useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import Link from "next/link";
+// import { useHistory } from "react-router-dom";
 import {
   saveTokenToLocalStorage,
   getTokenFromLocalStorage,
@@ -13,6 +14,7 @@ export default function () {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+  // const history = useHistory();
 
   useEffect(() => {
     setMessage("");
@@ -42,18 +44,19 @@ export default function () {
       setPassword("");
 
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
+      const role_local = localStorage.getItem("system_role");
+      if (role_local === "1") {
+        window.location.href = "/tour";
+      } else if (role_local === "2") {
+        window.location.href = "/admin";
+
+      }
     } catch (error) {
       setMessage("Đăng nhập thất bại!");
       console.error(error);
     }
   }
-  const role_local = localStorage.getItem("system_role");
-  let link_role = "/";
-  if (role_local == "1") {
-    link_role = "/";
-  } else if (role_local == "2") {
-    link_role = "/admin";
-  }
+
 
   return (
     <>
@@ -85,12 +88,12 @@ export default function () {
               />
             </div>
             {message && <p className={styles.messErr}>{message}</p>}
-            <Link href={`${link_role}`}>
+            {/* <Link href={`${link_role}`}> */}
               <button type="submit" className={styles.btn}>
                 LOGIN
                 <ArrowForwardIosIcon className={styles.icon} />
               </button>
-            </Link>
+            {/* </Link> */}
           </form>
           <span className={styles.Exception}>
             I don’t have an account ?
