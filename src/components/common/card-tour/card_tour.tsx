@@ -16,6 +16,7 @@ interface Props {
   detail: string;
   type_tour: string;
   location: string;
+  id:string;
   //   slug: string;
 }
 
@@ -30,10 +31,15 @@ export default function CardTour({
   detail,
   type_tour,
   location,
+  id,
 }: Props) {
+  const handleTourClick = () => {
+    localStorage.setItem("selectedTourId", id);
+    alert(id);
+  };
   return (
     <>
-      <div className={styles.container}>
+      <div className={styles.container} onClick={handleTourClick}>
         <div className={styles.body}>
           {/* <img src="plane.png" alt="imgTour" /> */}
           <img src={img} alt="imgTour" />
