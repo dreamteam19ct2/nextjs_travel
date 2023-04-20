@@ -31,4 +31,5 @@ html {
 }
 a{
   text-decoration: none;
+  color: var(--text-main);
 }
