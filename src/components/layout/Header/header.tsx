@@ -13,9 +13,23 @@ import { InputAdornment, TextField } from "@mui/material";
 
 export default function () {
   const [selectRoute, setselectRoute] = useState("home");
+  const [showMenu, setShowMenu] = useState(false);
+  const id = localStorage.getItem("id");
+  const email = localStorage.getItem("email");
+
+  function handleLogout() {
+    localStorage.clear();
+        window.location.href = "/";
+
+  }
+  const handleClickShowmenu = () => {
+    setShowMenu(!showMenu);
+  };
+
   const handleClick = (text: any) => {
     setselectRoute(text);
   };
+
   return (
     <>
       <div className={styles.header}>
@@ -57,9 +71,30 @@ export default function () {
             Contacts
           </div>
         </div>
-        <Link href="/login">
-          <button className={styles.header__button}>Book Ticket</button>
-        </Link>
+        {email ? (
+          <div
+            className={styles.header__userName}
+            onClick={handleClickShowmenu}
+          >
+            {email}
+            <ul
+              className={
+                showMenu
+                  ? styles.header__userName__menu
+                  : styles.header__userName__menu__block
+              }
+            >
+              <li className={styles.menu__item}>My profile</li>
+              <li className={styles.menu__item} onClick={handleLogout}>
+                Logout
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link href="/login">
+            <button className={styles.header__button}>Book Ticket</button>
+          </Link>
+        )}
       </div>
     </>
   );
