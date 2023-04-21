@@ -1,58 +1,63 @@
-'use client'
+"use client";
 
-import styles from "./payment.module.css"
+import styles from "./payment.module.css";
 import Headere from "@/components/layout/Header/header";
-import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
-export default function payment(){
-    return(
-            <>
-                <Headere></Headere>
-                <div  className={styles.container_payment}>
-                    <div className={styles.container__header__namePayment}>
-                                            <ArrowBackIosIcon />
-                                            <h1 className={styles.container__header__namePayment__Name}>BaNa Hill</h1>
-                     </div>
-                    <form action="">
-                        <div  className={styles.container__header__namePayment__content}>
-                                    <div className={styles.container__header__namePayment__content_item}>
-                                            <div className={styles.container__header__namePayment__content__name__firstname}>
-                                                    <p className={styles.container__header__namePayment__content__p}>First Name :  </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__name__view}></input>
-                                            </div>
-                                            <div className={styles.container__header__namePayment__content__name__lastname}>
-                                                    <p className={styles.container__header__namePayment__content__p}>Last Name :  </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__name__view}></input>
-                                            </div>
-                                    </div>
-                                    <div className={styles.container__header__namePayment__content_item}>
-                                                    <p className={styles.container__header__namePayment__content__p}>Phone Number  :  </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__view}></input>
-                                    </div>
-                                    <div className={styles.container__header__namePayment__content_item}>
-                                                    <p className={styles.container__header__namePayment__content__p}>Email Address :   </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__view}></input>
-                                    </div>
-                                    <div className={styles.container__header__namePayment__content_item}>
-                                                    <p className={styles.container__header__namePayment__content__p}>Number of People :   </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__view}></input>
-                                    </div>
-                                    <div className={styles.container__header__namePayment__content_item}>
-                                                    <p className={styles.container__header__namePayment__content__p}>Address:  </p>
-                                                    <input readOnly  className={styles.container__header__namePayment__content__view}></input>
-                                    </div>
-                                    
-                        </div>
-                        <div className={styles.container__header__namePayment__detail_price}> 
-                                         <div className={styles.container__header__namePayment__detail_price__nomal} >
-                                                <p className={styles.container__header__namePayment__detail_price__nomal_p}>Total Price</p>
-                                                <p>100$</p>    
-                                         </div>
-                                         <button className={styles.container__header__namePayment__detail_price_button}>Payment</button>
-                        </div>
-                    </form>
-                </div>
+import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
+import Grid from "@mui/material/Grid";
 
-            
-            </>
-    )
+export default function payment() {
+  return (
+    <>
+      <Headere></Headere>
+      <div className={styles.container_payment}>
+        <div className={styles.container__header__namePayment}>
+          <ArrowBackIosIcon />
+          <h1 className={styles.container__header__namePayment__Name}>
+            BaNa Hill
+          </h1>
+        </div>
+        <form action="" className={styles.payment__form}>
+          <Grid container spacing={5}>
+            <Grid item xs={4} className={styles.payment__form__sub}>
+              Full name :
+            </Grid>
+            <Grid item xs={8}>
+              <input type="text" className={styles.payment__form__input} />
+            </Grid>
+            <Grid item xs={4} className={styles.payment__form__sub}>
+              Phone Number :
+            </Grid>
+            <Grid item xs={8}>
+              <input type="text" className={styles.payment__form__input} />
+            </Grid>
+            <Grid item xs={4} className={styles.payment__form__sub}>
+              Email Address :
+            </Grid>
+            <Grid item xs={8}>
+              <input type="text" className={styles.payment__form__input} />
+            </Grid>
+            <Grid item xs={4} className={styles.payment__form__sub}>
+              Number of People :
+            </Grid>
+            <Grid item xs={8}>
+              <input type="text" className={styles.payment__form__input} />
+            </Grid>
+            <Grid item xs={4} className={styles.payment__form__sub}>
+              Address:
+            </Grid>
+            <Grid item xs={8}>
+              <input type="text" className={styles.payment__form__input} />
+            </Grid>
+          </Grid>
+        </form>
+        <div className={styles.payment__booking}>
+          <div>
+            <span className={styles.payment__price}>Price </span>
+            <span className={styles.payment__price__person}>100$</span>
+          </div>
+          <button className={styles.payment__button}>Booking Now</button>
+        </div>
+      </div>
+    </>
+  );
 }
