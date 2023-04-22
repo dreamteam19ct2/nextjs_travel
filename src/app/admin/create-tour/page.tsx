@@ -6,7 +6,7 @@ import axios from "axios";
 
 export default function Admin() {
   const [tourName, setTourName] = useState("1");
-  const [img, setImg] = useState("1");
+  const [img, setImg] = useState("/bgr.png");
   const [description, setDescription] = useState("1");
   const [dateStart, setDateStart] = useState("1");
   const [dateEnd, setDateEnd] = useState("1");
@@ -44,49 +44,6 @@ export default function Admin() {
       console.error(error);
     }
   }
-
-  const createTour = async () => {
-    const url = "http://127.0.0.1:8000/api/create_tour";
-    const data = {
-      tour_name: tourName,
-      img: "https://linhhungtourist.com.vn/wp-content/uploads/2019/03/1551111810-291-2-1551079327-width650height433.jpg",
-      description: description,
-      date_start: dateStart,
-      date_end: dateEnd,
-      max_people: maxPeople,
-      price: price,
-      detail: detail,
-      type_tour: typeTour,
-      location: location,
-    };
-    // const options = {
-    //   method: "POST",
-    //   body: JSON.stringify(data),
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // };
-
-    // const response = await fetch(url, options);
-    // const result = await response.json();
-
-    // console.log(result);
-  };
-
-  // const handleSubmit = (event: any) => {
-  //   // event.preventDefault();
-  //   createTour;
-  //   // setTourName("");
-  //   // setImg("");
-  //   // setDescription("");
-  //   // setDateStart("");
-  //   // setDateEnd("");
-  //   // setPrice("");
-  //   // setMaxPeople("");
-  //   // setDetail("");
-  //   // setTypeTour("");
-  //   // setLocation("");
-  // };
 
   return (
     <>
@@ -190,7 +147,11 @@ export default function Admin() {
             </div>
             <div className={styles.frame_img}>
               <div className={styles.img_title}>Image: </div>
-              <div className={styles.img_choose}>Choose Image</div>
+              <div className={styles.img_block}>
+                <input onChange={(event) => setImg(event.target.value)} type="text" className={styles.img_text} value={img} />
+                <div className={styles.img_choose}>
+                  <img src={img} alt="anh" /></div>
+              </div>
             </div>
             <div className={styles.position_img}>
               <button type="submit" className={styles.btn_create}>
