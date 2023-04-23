@@ -68,15 +68,29 @@
     width: 78px;
 }
 
+.img_block {
+    width: 880px;
+}
+
+.img_text {
+    width: 100%;
+    margin-left: 40px;
+    margin-bottom: 20px;
+}
+
 .img_choose {
     margin-left: 40px;
-    width: 880px;
+    width: 100%;
     height: 222px;
     color: var(--text-gray);
     background-color: var(--background-gray);
     display: inline-flex;
     align-items: center;
     justify-content: space-around;
+}
+
+.img_choose img {
+    height: 100%;
 }
 
 .button_create {

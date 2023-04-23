@@ -5,16 +5,16 @@ import styles from "./create_tour.module.css";
 import axios from "axios";
 
 export default function Admin() {
-  const [tourName, setTourName] = useState("1");
+  const [tourName, setTourName] = useState("Enter TourName");
   const [img, setImg] = useState("/bgr.png");
-  const [description, setDescription] = useState("1");
-  const [dateStart, setDateStart] = useState("1");
-  const [dateEnd, setDateEnd] = useState("1");
-  const [maxPeople, setMaxPeople] = useState("1");
-  const [price, setPrice] = useState("1");
-  const [detail, setDetail] = useState("1");
-  const [typeTour, setTypeTour] = useState("1");
-  const [location, setLocation] = useState("1");
+  const [description, setDescription] = useState("Enter TourDescription");
+  const [dateStart, setDateStart] = useState("Enter DateStart");
+  const [dateEnd, setDateEnd] = useState("Enter DateEnd");
+  const [maxPeople, setMaxPeople] = useState("Enter MaxPeople");
+  const [price, setPrice] = useState("Enter Price");
+  const [detail, setDetail] = useState("Enter Detail");
+  const [typeTour, setTypeTour] = useState("Enter TypeTour");
+  const [location, setLocation] = useState("EnterLocation");
 
   const [message, setMessage] = useState("");
 
