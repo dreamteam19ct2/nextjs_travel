@@ -6,6 +6,7 @@ import Headere from "@/components/layout/Header/header";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Grid from "@mui/material/Grid";
 import { useState, useEffect } from "react";
+import Link from "next/link";
 
 export default function tour_detail() {
   const [tourList, setTourList] = useState([]);
@@ -29,7 +30,9 @@ export default function tour_detail() {
         .map((tour: any) => (
           <div className={styles.container}>
             <div className={styles.TourDetail}>
-              <ArrowBackIosIcon />
+              <Link href='/tour'>
+                <ArrowBackIosIcon className={styles.icon} />
+              </Link>
               <h1 className={styles.TourDetail__Name}>{tour.tour_name}</h1>
             </div>
             <img className={styles.TourDetail__img} src={tour.img} alt="img" />
@@ -109,7 +112,11 @@ export default function tour_detail() {
                   {tour.price}$/person
                 </span>
               </div>
-              <button className={styles.TourDetail__button}>Booking Now</button>
+              <Link href="/payment">
+                <button className={styles.TourDetail__button}>
+                  Booking Now
+                </button>
+              </Link>
             </div>
           </div>
         ))}

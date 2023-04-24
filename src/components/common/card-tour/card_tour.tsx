@@ -12,7 +12,7 @@ interface Props {
   date_start: string;
   date_end: string;
   max_people: string;
-  price: number;
+  price: string;
   detail: string;
   type_tour: string;
   location: string;
@@ -35,6 +35,8 @@ export default function CardTour({
 }: Props) {
   const handleTourClick = () => {
     localStorage.setItem("selectedTourId", id);
+    localStorage.setItem("nameTour", tour_name);
+    localStorage.setItem("price", price);
     alert(id);
   };
   return (

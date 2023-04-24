@@ -33,3 +33,7 @@ a{
   text-decoration: none;
   color: var(--text-main);
 }
+button:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+}
