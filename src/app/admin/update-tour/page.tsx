@@ -110,6 +110,8 @@ export default function Admin() {
       );
       alert("delete ok");
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
+      window.location.href = "/admin";
+
     } catch (error) {
       alert("khong connnect dược server!");
       console.error(error);

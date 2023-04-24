@@ -21,21 +21,29 @@ export default function payment() {
   const nameTour = localStorage.getItem("nameTour");
   const priceDefault = localStorage.getItem("price");
 
-  useEffect(() => { 
+
+  useEffect(() => {
     const totalPrice = Number(priceDefault) * Number(maxPeople);
     setPrice(totalPrice.toString());
-  },[maxPeople])
+  }, [maxPeople]);
 
   async function handleSubmit(event: any) {
     event.preventDefault();
     try {
+      const today = new Date();
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, "0");
+      const day = String(today.getDate()).padStart(2, "0");
+      const dateHistory = `${year}-${month}-${day}`;
+      alert(dateHistory);
       const response = await axios.post("http://127.0.0.1:8000/api/booktour", {
-        // tour_name: tourName,
-        tour_id: id_tour,
-        user_id: id_user,
+        id_user: Number(id_user),
+        tour_name: nameTour,
+        tour_id: Number(id_tour),
+        price: Number(price),
+        date_history: dateHistory,
+        status_tour: "waiting",
         people: maxPeople,
-        price: price,
-        // status_tour: "waiting",
       });
       alert("booking tour thanh cong");
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
@@ -121,7 +129,9 @@ export default function payment() {
             <span className={styles.payment__price}>Price </span>
             <span className={styles.payment__price__person}>{price}$</span>
           </div>
-          <button className={styles.payment__button}>Booking Now</button>
+          <button className={styles.payment__button} onClick={handleSubmit}>
+            Booking Now
+          </button>
         </div>
       </div>
     </>

@@ -1,6 +1,7 @@
 "use client";
 import styles from "./historycard.module.css";
 export default function HistoryCard() {
+  
   return (
     <>
       <div className={styles.card__container}>
