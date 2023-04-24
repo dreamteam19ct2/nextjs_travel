@@ -23,6 +23,7 @@ body {
   font-family: var(--font-family);
   height: 100vh;
   background-color: var(--background-main);
+  position: relative;
 }
 html {
   /* font-size: 24px; */
