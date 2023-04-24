@@ -37,6 +37,8 @@ export default function CardTour({
     localStorage.setItem("selectedTourId", id);
     localStorage.setItem("nameTour", tour_name);
     localStorage.setItem("price", price);
+    localStorage.setItem("img", img);
+
     alert(id);
   };
   return (

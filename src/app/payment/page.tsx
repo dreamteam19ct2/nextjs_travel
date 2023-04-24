@@ -20,6 +20,8 @@ export default function payment() {
   const id_tour = localStorage.getItem("selectedTourId");
   const nameTour = localStorage.getItem("nameTour");
   const priceDefault = localStorage.getItem("price");
+  const img = localStorage.getItem("img");
+
 
 
   useEffect(() => {
@@ -44,6 +46,7 @@ export default function payment() {
         date_history: dateHistory,
         status_tour: "waiting",
         people: maxPeople,
+        img:img
       });
       alert("booking tour thanh cong");
       // Redirect đến trang khác hoặc làm bất kỳ thao tác nào khác tùy thuộc vào yêu cầu của bạn
