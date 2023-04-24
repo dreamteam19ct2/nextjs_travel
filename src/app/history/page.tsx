@@ -4,7 +4,9 @@ import Header from "@/components/layout/Header/header";
 import HistoryCard from "@/components/common/history-card/HistoryCard";
 import Grid from "@mui/material/Grid";
 
+
 export default function history() {
+ 
   return (
     <>
       <Header></Header>

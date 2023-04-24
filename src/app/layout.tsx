@@ -16,7 +16,7 @@ export default function RootLayout({
       <body style={{ overflowX: "hidden" }}>
         {/* <Header /> */}
         {children}
-        <Footer/>
+        {/* <Footer/> */}
       </body>
     </html>
   );

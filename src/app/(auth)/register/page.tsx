@@ -25,6 +25,7 @@ export default function () {
         email: email,
         password: password,
         c_password: confirmPassword,
+        system_role: 1,
       });
 
       setMessage(response.data.message);

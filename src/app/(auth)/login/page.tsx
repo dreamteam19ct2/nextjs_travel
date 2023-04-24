@@ -64,7 +64,7 @@ export default function () {
         <div className={styles.form__signin}>
           <form onSubmit={handleSubmit}>
             <div className={styles.text1}>Welcome back !!!</div>
-            <div className={styles.text2}>Sing in</div>
+            <div className={styles.text2}>Sign in</div>
             <div className={styles.form__input}>
               <div className={styles.form__input__title}>Email</div>
               <input
