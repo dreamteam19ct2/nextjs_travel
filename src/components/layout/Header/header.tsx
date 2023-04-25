@@ -84,7 +84,9 @@ export default function () {
                   : styles.header__userName__menu__block
               }
             >
-              <li className={styles.menu__item}>My profile</li>
+              <Link href="/user_profile">
+                <li className={styles.menu__item}>My profile</li>
+              </Link>
               <li className={styles.menu__item} onClick={handleLogout}>
                 Logout
               </li>
