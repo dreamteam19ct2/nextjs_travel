@@ -38,14 +38,17 @@ export default function () {
           <div className={styles.nameLogo}>TRVL</div>
         </div>
         <div className={styles.header__router}>
-          <div
-            className={
-              selectRoute === "home" ? styles.selectRoute : styles.router
-            }
-            onClick={() => handleClick("home")}
-          >
-            Home
-          </div>
+          <Link href="/">
+            <div
+              className={
+                selectRoute === "home" ? styles.selectRoute : styles.router
+              }
+              onClick={() => handleClick("home")}
+            >
+              Home
+            </div>
+          </Link>
+
           <div
             className={
               selectRoute === "abouUs" ? styles.selectRoute : styles.router
@@ -62,14 +65,16 @@ export default function () {
           >
             Destination
           </div>
-          <div
-            className={
-              selectRoute === "contacts" ? styles.selectRoute : styles.router
-            }
-            onClick={() => handleClick("contacts")}
-          >
-            Contacts
-          </div>
+          <Link href="/history">
+            <div
+              className={
+                selectRoute === "contacts" ? styles.selectRoute : styles.router
+              }
+              onClick={() => handleClick("contacts")}
+            >
+              History
+            </div>
+          </Link>
         </div>
         {email ? (
           <div

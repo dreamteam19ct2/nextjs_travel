@@ -6,7 +6,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Grid from "@mui/material/Grid";
 import Link from "next/link";
 import axios from "axios";
-
+import Footer from "@/components/layout/Footer/footer";
 export default function payment() {
   const [tourName, setTourName] = useState("");
   const [fullName, setFullName] = useState("");
@@ -137,6 +137,7 @@ export default function payment() {
           </button>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

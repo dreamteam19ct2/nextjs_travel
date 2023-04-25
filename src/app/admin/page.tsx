@@ -5,6 +5,7 @@ import CardTour from "@/components/common/card-tour/card_tour";
 import styles from "./admin.module.css";
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Footer from "@/components/layout/Footer/footer";
 
 export default function Admin() {
   const [tourList, setTourList] = useState([]);
@@ -124,6 +125,7 @@ export default function Admin() {
             ))}
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 }

@@ -5,6 +5,8 @@ import StarHalfSharpIcon from '@mui/icons-material/StarHalfSharp';
 import StarPurple500SharpIcon from '@mui/icons-material/StarPurple500Sharp';
 import Headere from "@/components/layout/Header/header";
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import Footer from "@/components/layout/Footer/footer";
+
 export default function tour_detail(){
     const [isBorderRed, setIsBorderRed] = useState(false);
 
