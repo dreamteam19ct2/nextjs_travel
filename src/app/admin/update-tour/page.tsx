@@ -5,6 +5,7 @@ import styles from "./update_tour.module.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import axios from "axios";
+import Footer from "@/components/layout/Footer/footer";
 
 export default function Admin() {
   type Tour = {
@@ -303,6 +304,7 @@ export default function Admin() {
           </div>
         </form>
       </div>
+      <Footer></Footer>
     </>
   );
 }

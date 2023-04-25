@@ -5,6 +5,7 @@ import CheckTourCard from "@/components/common/checkTour-card/CheckTourCard";
 import Grid from "@mui/material/Grid";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Footer from "@/components/layout/Footer/footer";
 
 interface Props {
   tour_name: string;
@@ -126,6 +127,7 @@ export default function checktour() {
           ))}
         </Grid>
       </div>
+      <Footer></Footer>
     </>
   );
 }

@@ -7,7 +7,7 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import Grid from "@mui/material/Grid";
 import { useState, useEffect } from "react";
 import Link from "next/link";
-
+import Footer from "@/components/layout/Footer/footer";
 export default function tour_detail() {
   const [tourList, setTourList] = useState([]);
 
@@ -120,6 +120,7 @@ export default function tour_detail() {
             </div>
           </div>
         ))}
+      <Footer></Footer>
     </>
   );
 }

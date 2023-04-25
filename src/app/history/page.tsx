@@ -5,7 +5,7 @@ import HistoryCard from "@/components/common/history-card/HistoryCard";
 import Grid from "@mui/material/Grid";
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+import Footer from "@/components/layout/Footer/footer";
 export default function history() {
   const [historyTour, setHistoryTour] = useState([]);
 
@@ -51,6 +51,7 @@ export default function history() {
           ))}
         </Grid>
       </div>
+      <Footer></Footer>
     </>
   );
 }
