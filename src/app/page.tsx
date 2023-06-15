@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Header from "@/components/layout/Header/header";
 import { Inter } from "next/font/google";
 import styles from "./page.module.css";
 import Grid from "@mui/material/Grid";
@@ -7,34 +8,13 @@ import SearchIcon from "@mui/icons-material/Search";
 import LoyaltyIcon from "@mui/icons-material/Loyalty";
 import AirplanemodeActiveIcon from "@mui/icons-material/AirplanemodeActive";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
-import Header from '@/components/layout/Header/header'
-import { useState, useEffect } from "react";
-
 const inter = Inter({ subsets: ["latin"] });
 
-// interface Item {
-//   username: any;
-//   email: any;
-//   password: any;
-//   system_role: any;
-// }
 export default function Home() {
-  // async function getData() {
-  //   const res = await fetch(
-  //     "https://641b138c1f5d999a445ac9fe.mockapi.io/api/project/project"
-  //   );
-    
-  //   const data = await res.json();
-  //   console.log(data);
-  //   return data;
-  // }
   return (
     <main>
       <Header />
 
-      <div>
-        {/* <button onClick={getData}>AAAAAAAAAAAAAAA</button> */}
-      </div>
       <div className={styles.intro}>
         <div className={styles.line}></div>
         <Grid container spacing={0}>

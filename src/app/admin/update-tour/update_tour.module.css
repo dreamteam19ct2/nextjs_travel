@@ -1,0 +1,119 @@
+.table {
+    margin-top: 26px;
+    padding-bottom: 200px;
+}
+
+.content {
+    padding: 48px 128px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.fill_line {
+    display: flex;
+    margin-top: 40px;
+    align-items: baseline;
+}
+
+.fill_line_left {
+    width: 30%;
+}
+
+.fill_line_right {
+    width: 70%;
+}
+
+.fill_line_right input {
+    width: 100%;
+    border: none;
+    border-bottom: solid 1px black;
+}
+
+.frame_table table {
+    width: 100%;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.frame_table table,
+.description,
+.schedule_day {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.schedule_day {
+    width: 20%;
+    padding: 20px 16px;
+}
+
+.description {
+    width: 80%;
+    padding: 20px 16px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.descript {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.frame_img {
+    display: flex;
+    margin-top: 78px;
+}
+
+.img_title {
+    width: 78px;
+}
+
+.img_choose {
+    margin-left: 40px;
+    width: 880px;
+    height: 222px;
+    color: var(--text-gray);
+    background-color: var(--background-gray);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.button_create {
+    margin-top: 80px;
+    padding-bottom: 58px;
+}
+
+.position_img {
+    display: flex;
+    float: right;
+}
+
+.btn_delete {
+    margin-bottom: 67px;
+    margin-right: 36px;
+    width: 147px;
+    height: 55px;
+    border-radius: 20px;
+    background-color: #CF0202;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.btn_create {
+    margin-bottom: 67px;
+    width: 147px;
+    height: 55px;
+    border-radius: 20px;
+    background-color: var(--btn-main);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+    cursor: pointer;
+}
+
+.button_create button {
+    border: none;
+}
